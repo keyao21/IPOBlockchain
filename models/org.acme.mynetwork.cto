@@ -27,6 +27,17 @@ participant Lawyer identified by lawyerID {
     o String lastName
 }
 
+participant Investor identified by investorID {
+    o String investorID
+    o String name
+}
+
+transaction Draft {
+    --> EngagementLetter engagementLetter
+    --> Company company
+    --> Lawyer newLawyer
+}
+
 /**
 * transaction Trade {
 *     --> Commodity commodity

@@ -1,7 +1,7 @@
 {
   "name": "ipoblock",
   "description": "blockchain for ipos",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "author": "kevin",
   "email": "kyao747@gmail.com",
   "license": "Apache-2.0",
