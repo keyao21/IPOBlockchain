@@ -1,0 +1,35 @@
+/**
+ * My network
+ */
+namespace org.acme.mynetwork
+
+asset EngagementLetter identified by ipoID {
+    o String ipoID
+    o String description
+    --> Company company
+    --> Underwriter underwriter
+    --> Lawyer lawyer
+}
+
+participant Company identified by companyID {
+    o String companyID
+    o String name
+}
+
+participant Underwriter identified by writerID {
+    o String writerID
+    o String name
+}
+
+participant Lawyer identified by lawyerID {
+    o String lawyerID
+    o String firstName
+    o String lastName
+}
+
+/**
+* transaction Trade {
+*     --> Commodity commodity
+*     --> Trader newOwner
+* }
+*/
