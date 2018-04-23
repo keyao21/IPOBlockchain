@@ -1,0 +1,30 @@
+/**
+    Investor Details
+**/
+
+namespace org.acme.Investor
+
+abstract participant Investor identified by investorID {
+  o String investorID
+  o Integer netWorth optional
+  o Integer heldShares
+  o String investorKey
+}
+
+enum StockType {
+  o COMMON
+  o PREFERRED
+}
+
+participant privInvestor extends Investor {
+  o String name
+  o String Institution optional
+  o Integer potentialInvestment optional
+  o StockType stockType
+}
+
+participant pubInvestor extends Investor {
+  o String name
+  o Integer investmentValue
+  o StockType stockType
+}
