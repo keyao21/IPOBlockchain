@@ -1,0 +1,25 @@
+/**
+    Business Participant definitions
+**/
+
+namespace org.acme.Business
+
+import org.acme.mynetwork.Company //Company name and ID
+
+abstract participant Employee extends Company {
+  o Integer heldShares
+  o String EmployeeID
+}
+
+participant CFO identified by EmployeeID extends Employee {
+  o String name
+}
+
+participant CEO identified by EmployeeID extends Employee {
+  o String name
+}
+
+participant COO identified by EmployeeID extends Employee {
+  o String name
+}
+

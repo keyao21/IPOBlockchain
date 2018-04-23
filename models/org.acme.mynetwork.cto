@@ -13,7 +13,7 @@ asset EngagementLetter identified by ipoID {
 
 participant Company identified by companyID {
     o String companyID
-    o String name
+    o String companyName
 }
 
 participant Underwriter identified by writerID {
