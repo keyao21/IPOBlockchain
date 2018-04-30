@@ -20,12 +20,19 @@ asset processTracker identified by ipoID {
 }
 
 //Define tradeable asset 
+concept Voting {
+  o Boolean voteWorth default=false
+  o Double voteValue
+}
+
 asset share identified by shareID {
   o String shareID
   o Double sharePrice
   o Double shareMarketPrice
   o Double dividendPercentage
   o Double equityWorth
+  o Voting voteWorth //remember to couple the voteWorth and voteValue together.
+  o Voting voteValue
 }
 
 //Define filing documents
