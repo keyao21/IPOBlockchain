@@ -13,6 +13,5 @@ composer archive create -t dir -n .
 # install new business network
 composer network install -a "ipoblock@$version.bna" -c PeerAdmin@hlfv1
 
-# upgrade to new business network 
+# upgrade to new business network
 composer network upgrade -c PeerAdmin@hlfv1 -n ipoblock -V "$version"
-
