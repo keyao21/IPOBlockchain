@@ -2,7 +2,7 @@
     Government Participant Definition
 */
 
-namespace org.acme.gov 
+namespace org.ipoblockchain.Gov 
 
 enum Branch {
   o JUDICIARY

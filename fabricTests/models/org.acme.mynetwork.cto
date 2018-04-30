@@ -1,7 +1,7 @@
 /**
  * My network
  */
-namespace org.acme.mynetwork
+namespace org.ipoblockchain.mynetwork
 
 asset EngagementLetter identified by ipoID {
     o String ipoID

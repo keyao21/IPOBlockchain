@@ -2,22 +2,7 @@
     ASSET DEFINITIONS
 **/
 
-namespace org.acme.Assets
-
-//Define Tracker asset to show progress in process.
-enum ProcessPhase {
-  o BEAUTY_CONTEST
-  o IN_REGISTRATION
-  o ROAD_SHOW
-  o PRICING
-  o INITIAL_SALE
-}
-
-asset processTracker identified by ipoID {
-  o String ipoID
-  o ProcessPhase processPhase
-  o String phaseNotes optional
-}
+namespace org.ipoblockchain.Assets
 
 //Define tradeable asset 
 concept Voting {

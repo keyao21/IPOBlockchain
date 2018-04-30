@@ -2,7 +2,7 @@
     Investor Details
 **/
 
-namespace org.acme.Investor
+namespace org.ipoblockchain.Investor
 
 abstract participant Investor identified by investorID {
   o String investorID

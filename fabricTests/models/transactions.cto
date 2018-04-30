@@ -1,0 +1,45 @@
+/**
+    TRANSACTION DEFINITIONS
+**/
+
+namespace org.ipoblockchain.Transactions
+
+//import all assets and participants
+import org.ipoblockchain.mynetwork.*
+import org.ipoblockchain.Assets.*
+import org.ipoblockchain.Business.*
+import org.ipoblockchain.Contractor.*
+import org.ipoblockchain.Gov.*
+import org.ipoblockchain.Investor.*
+
+enum ParticipantTwoSigStatus {
+  o PENDING
+  o SIGNED
+}
+
+concept Signature {
+  o String participantOneSig
+  o String participantTwoSig optional
+  o ParticipantTwoSigStatus participantTwoSigStatus
+}
+
+abstract transaction lifecycleTransaction {
+  o String transactionID
+  o Signature participantOneSig
+  o Signature participantTwoSig optional
+  o Signature participantTwoSigStatus
+  o String docHash
+}
+
+transaction EngagementLetter extends lifecycleTransaction {
+  --> Underwriter underwriter
+  --> CEO ceo
+  // potentially implement a regex later
+}
+
+transaction RegistrationStatement extends lifecycleTransaction {
+  --> Underwriter underwriter optional
+  --> CFO cfo optional
+  --> Lawyer lawyer optional
+}
+

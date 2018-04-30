@@ -2,9 +2,9 @@
     Business Participant definitions
 **/
 
-namespace org.acme.Business
+namespace org.ipoblockchain.Business
 
-import org.acme.mynetwork.Company //Company name and ID
+import org.ipoblockchain.mynetwork.Company //Company name and ID
 
 abstract participant Employee extends Company {
   o Integer heldShares
@@ -22,4 +22,3 @@ participant CEO identified by EmployeeID extends Employee {
 participant COO identified by EmployeeID extends Employee {
   o String name
 }
-
