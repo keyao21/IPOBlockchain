@@ -1,0 +1,26 @@
+/**
+    Business Contractor Participants Definitions
+**/
+
+namespace org.acme.Contractor
+
+import org.acme.mynetwork.Company
+
+abstract participant Contractor identified by contractorID extends Company {
+  o String contractorID
+}
+
+participant Lawyer extends Contractor {
+  o Integer remuneration optional
+  o String lawyerKey
+}
+
+participant Underwriter extends Contractor {
+  o Integer remuneration optional
+  o String underwriterKey
+}
+
+participant Banker extends Contractor {
+  o Integer remuneration optional
+  o String bankerKey
+}

@@ -1,0 +1,88 @@
+/**
+    ASSET DEFINITIONS
+**/
+
+namespace org.acme.Assets
+
+//Define Tracker asset to show progress in process.
+enum ProcessPhase {
+  o BEAUTY_CONTEST
+  o IN_REGISTRATION
+  o ROAD_SHOW
+  o PRICING
+  o INITIAL_SALE
+}
+
+asset processTracker identified by ipoID {
+  o String ipoID
+  o ProcessPhase processPhase
+  o String phaseNotes optional
+}
+
+//Define tradeable asset 
+concept Voting {
+  o Boolean voteWorth default=false
+  o Double voteValue
+}
+
+asset share identified by shareID {
+  o String shareID
+  o Double sharePrice
+  o Double shareMarketPrice
+  o Double dividendPercentage
+  o Double equityWorth
+  o Voting voteWorth //remember to couple the voteWorth and voteValue together.
+  o Voting voteValue
+}
+
+//Define filing documents
+asset engagementLetter identified by letterID {
+  o String letterID
+  o String companyName
+  o String underwriterName
+  o String companySig
+  o String underwriterSig
+  o Double underwritingPercentage
+  o Boolean syndicate default=false
+  o DateTime lastUpdate
+}
+
+enum StatementType {
+  o BALANCE_SHEET
+  o INCOME_STATEMENT
+  o CASH_FLOW_STATEMENT
+  o SHAREHOLDING_PATTERN
+}
+
+asset financialStatement identified by statementID {
+  o String statementID
+  o StatementType statementType
+  o Boolean Audited default=false
+  //Is there a way to define an if statement in here to define the conditions for audited?
+  o String CFOSig
+  o String AuditorSig
+}
+
+asset prospectus identified by prospectusID {
+  o String prospectusID
+  o Boolean Public default=false
+  o String prospectusLink optional
+  o String SECSig
+  o String companySig
+  o String bankerSig
+}
+
+asset registrationCertificate identified by certificateID {
+  o String certificateID
+  o String companySig
+  o String SECSig
+  o String bankerSig
+  o String certificateLink optional
+}
+
+asset saleOrder identified by orderID {
+  o String orderID
+  o Integer orderValue
+  o Integer shareValue optional //might not be whole number be careful with def.
+}
+
