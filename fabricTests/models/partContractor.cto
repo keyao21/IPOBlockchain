@@ -6,7 +6,7 @@ namespace org.ipoblockchain.Contractor
 
 import org.ipoblockchain.mynetwork.Company
 
-abstract participant Contractor identified by contractorID extends Company {
+abstract participant Contractor identified by contractorID {
   o String contractorID
 }
 

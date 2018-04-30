@@ -4,17 +4,4 @@
 
 namespace org.ipoblockchain.Tracking
 
-//Define Tracker asset to show progress in process.
-enum ProcessPhase {
-  o BEAUTY_CONTEST
-  o IN_REGISTRATION
-  o ROAD_SHOW
-  o PRICING
-  o INITIAL_SALE
-}
-
-asset processTracker identified by ipoID {
-  o String ipoID
-  o ProcessPhase processPhase
-  o String phaseNotes optional
-}
+//unnecessary

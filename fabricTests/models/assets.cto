@@ -4,6 +4,28 @@
 
 namespace org.ipoblockchain.Assets
 
+//import all assets and participants
+import org.ipoblockchain.mynetwork.*
+import org.ipoblockchain.Business.*
+import org.ipoblockchain.Contractor.*
+import org.ipoblockchain.Gov.*
+import org.ipoblockchain.Investor.*
+
+//Define Tracker asset to show progress in process.
+enum ProcessPhase {
+  o BEAUTY_CONTEST
+  o IN_REGISTRATION
+  o ROAD_SHOW
+  o PRICING
+  o INITIAL_SALE
+}
+
+asset processTracker identified by ipoID {
+  o String ipoID
+  o ProcessPhase processPhase
+  o String phaseNotes optional
+}
+
 //Define tradeable asset 
 concept Voting {
   o Boolean voteWorth default=false
@@ -23,13 +45,15 @@ asset share identified by shareID {
 //Define filing documents
 asset engagementLetter identified by letterID {
   o String letterID
+  o String letterHash
   o String companyName
   o String underwriterName
-  o String companySig
-  o String underwriterSig
+  o String companySig optional
+  o String underwriterSig optional
   o Double underwritingPercentage
   o Boolean syndicate default=false
   o DateTime lastUpdate
+  --> Participant owner
 }
 
 enum StatementType {
