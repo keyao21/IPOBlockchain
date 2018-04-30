@@ -2,9 +2,9 @@
     Business Contractor Participants Definitions
 **/
 
-namespace org.acme.Contractor
+namespace org.ipoblockchain.Contractor
 
-import org.acme.mynetwork.Company
+import org.ipoblockchain.mynetwork.Company
 
 abstract participant Contractor identified by contractorID extends Company {
   o String contractorID
