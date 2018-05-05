@@ -4,14 +4,14 @@
 
 /**
 * A transaction processor function description
-* @param {org.ipoblockchain.Transactions} engagementLetter A human description of the parameter
+* @param {org.ipoblockchain.Transactions.EngagementLetter} engagementLetter A human description of the parameter
 * @transaction
 */
 function onEngagementLetter(engagementLetter) {
-
     // get assetRegistry for asset engagementLetter
-    const registry = await getAssetRegistry('org.ipoblockchain.Assets.engagementLetter');
-    let existCheck = registry.exists(engagementLetter.letterID);
+    const assetRegistry = getAssetRegistry('org.ipoblockchain.Assets.engagementLetter');
+    let existCheck = assetRegistry.exists(engagementLetter.letterID);
+
     if (existCheck == false){
         console.log('engagement letter is not found...');
         return; 
@@ -22,11 +22,6 @@ function onEngagementLetter(engagementLetter) {
     let currentOwner = engagementLetter.owner;
     let isEmployee = currentOwner instanceof Employee;
     
-/*  currentOwnerType = "notCompany";
-    if (checkType == true) {
-        let currentOwnerType = "Company";
-    } */
-
     if (engagementLetter.el.letterHash != engagementLetter.newHash){
         // delete sigs
         engagementLetter.el.companySig = null;
