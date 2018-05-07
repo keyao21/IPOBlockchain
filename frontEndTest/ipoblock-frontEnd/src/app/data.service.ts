@@ -33,7 +33,7 @@ export class DataService<Type> {
 
     public getAll(ns: string): Observable<Type[]> {
         console.log('GetAll ' + ns + ' to ' + this.actionUrl + ns);
-        return this.http.get(`${this.actionUrl}${ns}`)
+        return this.http.get('/api/engagementLetter')
           .map(this.extractData)
           .catch(this.handleError);
     }

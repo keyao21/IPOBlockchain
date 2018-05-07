@@ -26,7 +26,7 @@ export class engagementLetterComponent implements OnInit {
 
   myForm: FormGroup;
 
-  private allAssets;
+  private allAssets = [];
   private asset;
   private currentId;
 	private errorMessage;
@@ -137,7 +137,7 @@ export class engagementLetterComponent implements OnInit {
     })
     .catch((error) => {
         if(error == 'Server error'){
-            this.errorMessage = "Could not connect to REST server. Please check your configuration details";
+            this.errorMessage = "HI! Could not connect to REST server. Please check your configuration details";
         }
         else if(error == '404 - Not Found'){
 				this.errorMessage = "404 - Could not find API route. Please check your available APIs."
@@ -173,7 +173,8 @@ export class engagementLetterComponent implements OnInit {
     return this[name].value.indexOf(value) !== -1;
   }
 
-  addAsset(form: any): Promise<any> {
+  addAsset(form: any): Promise<any> { console.log('letterID');
+  console.log(this.letterID.value);
     this.asset = {
       $class: "org.ipoblockchain.Assets.engagementLetter",
       
@@ -206,7 +207,7 @@ export class engagementLetterComponent implements OnInit {
         
       
         
-          "syndicate":this.syndicate.value,
+          "syndicate":false,
         
       
         
@@ -218,7 +219,7 @@ export class engagementLetterComponent implements OnInit {
         
       
     };
-
+	
     this.myForm.setValue({
       
         
@@ -312,12 +313,12 @@ export class engagementLetterComponent implements OnInit {
       });
     })
     .catch((error) => {
-        if(error == 'Server error'){
-            this.errorMessage = "Could not connect to REST server. Please check your configuration details";
-        }
-        else{
-            this.errorMessage = error;
-        }
+        //if(error == 'Server error'){
+          //  this.errorMessage = "Could not connect to REST server. Please check your configuration details";
+        //}
+        //else{
+         //   this.errorMessage = error;
+        //}
     });
   }
 
@@ -393,7 +394,7 @@ export class engagementLetterComponent implements OnInit {
 		})
 		.catch((error) => {
             if(error == 'Server error'){
-				this.errorMessage = "Could not connect to REST server. Please check your configuration details";
+				this.errorMessage = "LOL Could not connect to REST server. Please check your configuration details";
 			}
             else if(error == '404 - Not Found'){
 				this.errorMessage = "404 - Could not find API route. Please check your available APIs."
@@ -414,7 +415,7 @@ export class engagementLetterComponent implements OnInit {
 		})
 		.catch((error) => {
             if(error == 'Server error'){
-				this.errorMessage = "Could not connect to REST server. Please check your configuration details";
+				this.errorMessage = "LMAO Could not connect to REST server. Please check your configuration details";
 			}
 			else if(error == '404 - Not Found'){
 				this.errorMessage = "404 - Could not find API route. Please check your available APIs."
@@ -568,7 +569,7 @@ export class engagementLetterComponent implements OnInit {
     })
     .catch((error) => {
         if(error == 'Server error'){
-            this.errorMessage = "Could not connect to REST server. Please check your configuration details";
+            this.errorMessage = "HELLO Could not connect to REST server. Please check your configuration details";
         }
         else if(error == '404 - Not Found'){
 				this.errorMessage = "404 - Could not find API route. Please check your available APIs."
