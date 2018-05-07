@@ -1,0 +1,15 @@
+{
+  "loadAssets": {
+    "cardName": "admin@ipoblock"
+  },
+  "composer": {
+    "log": {
+      "debug": "composer[debug]:*",
+      "console": {
+        "maxLevel": "error"
+      },
+      "file": {
+        "filename" : "./log.txt"
+      }
+    }
+}
