@@ -1,6 +1,6 @@
 #!/bin/bash
 # change to default folder.
-cd ~/Documents/IPOBlockchain/IPOBlockchain/finalTest
+cd ../finalTest
 
 # input business network version - use latest version in tree.
 echo "What is the deployable version number? (e.g. 0.0.1)"
