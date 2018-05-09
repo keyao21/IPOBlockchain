@@ -2,11 +2,13 @@
 
 Blockchain solution for IPO processes 
 
-# Running Locally
+## Running Locally
 
-Install Hyperledger Composer framework onto your local machine. To set up demo, run the following scripts in the ./utils directory:
+Install Hyperledger Composer framework onto your local machine. To set up demo, navigate to the ./finalTest directory and run the following: 
 
-setupDemo.sh
-finalTest.sh 
+```bash
+./start.sh
+```
+
 
 
