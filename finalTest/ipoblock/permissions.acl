@@ -1,0 +1,100 @@
+/**
+ * Access control rules for tutorial-network
+ */
+rule Default {
+    description: "Allow all participants access to all resources"
+    participant: "ANY"
+    operation: ALL
+    resource: "org.ipoblockchain.mynetwork.*"
+    action: ALLOW
+}
+
+rule SystemACL {
+  description:  "System ACL to permit all access"
+  participant: "ANY"
+  operation: ALL
+  resource: "org.hyperledger.composer.system.**"
+  action: ALLOW
+}
+
+rule createAsset {
+  description: "Allow admin to create all resources"
+  participant: "org.hyperledger.composer.system.NetworkAdmin"
+  operation: READ, CREATE, UPDATE
+  resource: "org.ipoblockchain.**"
+  action: ALLOW
+}
+
+rule underwriterRule1 {
+  description: "Allow underwriter to see everything"
+  participant: "org.ipoblockchain.Contractor.Underwriter"
+  operation: READ
+  resource: "org.ipoblockchain.**"
+  action: ALLOW
+}
+
+rule underwriterRule2 {
+  description: "Allow underwriter to access all assets"
+  participant: "org.ipoblockchain.Contractor.Underwriter"
+  operation: ALL
+  resource: "org.ipoblockchain.Assets.*"
+  action: ALLOW
+}
+
+rule underwriterRule3 {
+  description: "Allow underwriter to access all transactions"
+  participant: "org.ipoblockchain.Contractor.Underwriter"
+  operation: ALL
+  resource: "org.ipoblockchain.Transactions.*"
+  action: ALLOW
+}
+
+rule ceoRule1 {
+  description: "Allow CEO to see everything"
+  participant: "org.ipoblockchain.Business.CEO"
+  operation: READ
+  resource: "org.ipoblockchain.**"
+  action: ALLOW
+}
+
+rule ceoRule2 {
+  description: "Allow CEO to access all assets"
+  participant: "org.ipoblockchain.Business.CEO"
+  operation: ALL
+  resource: "org.ipoblockchain.Assets.*"
+  action: ALLOW
+}
+
+rule ceoRule3 {
+  description: "Allow CEO to access all transactions"
+  participant: "org.ipoblockchain.Business.CEO"
+  operation: ALL
+  resource: "org.ipoblockchain.Transactions.*"
+  action: ALLOW
+}
+
+rule investorRule1 {
+  description: "Allow investor to see everything"
+  participant: "org.ipoblockchain.Investor.privInvestor"
+  operation: READ
+  resource: "org.ipoblockchain.**"
+  action: ALLOW
+}
+
+rule investorRule2 {
+  description: "Allow investor to access all auction assets and transactions"
+  participant: "org.ipoblockchain.Investor.privInvestor"
+  operation: ALL
+  resource: "org.ipoblockchain.Auction.*"
+  action: ALLOW
+}
+
+/*
+rule invesotrRule3 {
+  description: "Allow CEO to access all transactions"
+  participant: "org.ipoblockchain.Investor"
+  operation: ALL
+  resource: "org.ipoblockchain.Transactions.*"
+  action: ALLOW
+}
+*/

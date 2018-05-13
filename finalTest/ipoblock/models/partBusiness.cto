@@ -1,0 +1,32 @@
+/**
+    Business Participant definitions
+**/
+
+namespace org.ipoblockchain.Business
+
+//import org.ipoblockchain.mynetwork.Company //Company name and ID
+
+participant Company identified by companyID {
+    o String companyID
+    o String companyName
+}
+
+abstract participant Employee extends Company {
+  o Integer heldShares
+  o String EmployeeID
+}
+/*
+participant CFO identified by EmployeeID extends Employee {
+  o String name
+}
+*/
+
+participant CEO identified by EmployeeID extends Employee {
+  o String name
+}
+
+/*
+participant COO identified by EmployeeID extends Employee {
+  o String name
+}
+*/

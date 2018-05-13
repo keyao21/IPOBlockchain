@@ -1,0 +1,38 @@
+// new shit for auction
+
+
+
+namespace org.ipoblockchain.Auction
+
+//import all assets and participants
+import org.ipoblockchain.Assets.*
+import org.ipoblockchain.mynetwork.*
+import org.ipoblockchain.Business.*
+import org.ipoblockchain.Contractor.*
+import org.ipoblockchain.Gov.*
+import org.ipoblockchain.Investor.*
+
+
+asset Listing identified by listingID{
+  o String listingID
+  o Integer totalShares
+  o Integer remainingShares
+  o Double capitalRaised default=0.0
+  o Offer[] offers optional
+  --> Company company
+}
+
+concept Bid {
+  o Double price
+  o Integer shares
+}
+
+transaction Offer {
+  o Bid bid
+  --> Listing listing
+  --> Investor investor 
+}
+
+transaction CloseBidding {
+  --> Listing listing
+}

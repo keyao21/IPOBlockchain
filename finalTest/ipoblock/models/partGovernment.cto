@@ -1,0 +1,21 @@
+/*
+    Government Participant Definition
+*/
+
+namespace org.ipoblockchain.Gov 
+
+enum Branch {
+  o JUDICIARY
+  o EXECUTIVE
+  o LEGISLATIVE
+}
+
+abstract participant Government {
+  o Branch branch
+}
+
+participant SEC identified by secID {
+  o String secID
+  o String secKey
+  o String liaisonName
+}

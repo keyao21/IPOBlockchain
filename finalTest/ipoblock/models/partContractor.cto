@@ -1,0 +1,28 @@
+/**
+    Business Contractor Participants Definitions
+**/
+
+namespace org.ipoblockchain.Contractor
+
+import org.ipoblockchain.Business.Company
+
+abstract participant Contractor identified by contractorID {
+  o String contractorID
+}
+
+/*
+participant Lawyer extends Contractor {
+  o Integer remuneration optional
+  o String lawyerKey
+}
+*/
+participant Underwriter extends Contractor {
+  o Integer remuneration optional
+  o String underwriterKey
+}
+/*
+participant Banker extends Contractor {
+  o Integer remuneration optional
+  o String bankerKey
+}
+*/
